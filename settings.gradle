@@ -1,0 +1,2 @@
+include ':app'
+rootProject.name = "UCSM-v1.0.0"

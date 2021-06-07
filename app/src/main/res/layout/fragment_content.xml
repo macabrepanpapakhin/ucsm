@@ -8,43 +8,77 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".Content"
     android:background="#ffffff"
+
     android:tag="content"
   >
 
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+
 
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical">
-            <Button
-                android:padding="30dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_above="@+id/container"
-                android:drawableLeft="@drawable/ucsmsmaller"
-                android:background="@color/space_transparent"
-                android:id="@+id/name"
-                android:text="Your Name"
-                android:paddingLeft="25dp"
+            android:orientation="vertical"
+            >
 
+            <Button
+                android:padding="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_above="@+id/container"
+                android:drawableLeft="@drawable/ucsmquitesmall"
+                android:background="@color/white"
+                android:id="@+id/name"
+
+                android:text="University of Computer Studies,  \n Mandalay(COE)"
                 />
 
             <GridView
+               android:padding="30dp"
+
+                android:background="@drawable/background_color"
                 android:paddingTop="30dp"
                 android:id="@+id/grid_view"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:numColumns="4"/>
+                android:numColumns="4"
+                />
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+           <LinearLayout
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:text="University of Computer Studies, Mandalay"
+                android:textSize="25sp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:text="University of Computer Studies, Mandalay"
+                android:textSize="25sp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:text="University of Computer Studies, Mandalay"
+                android:textSize="25sp"/>
+            <TextView
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:text="University of Computer Studies, Mandalay"
+            android:textSize="25sp"/>
+           </LinearLayout>
+            </ScrollView>
+
+
         </LinearLayout>
 
-    </LinearLayout>
+
 
 
     </FrameLayout>

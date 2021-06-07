@@ -7,6 +7,7 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.MenuItem;
@@ -33,25 +34,11 @@ NavigationView navigationView;
     public void onBackPressed() {
         if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
             drawerLayout.closeDrawer(GravityCompat.START);
-        } else {
-
-
-            if (doubleBackToExitPressedOnce) {
-                super.onBackPressed();
-                return;
-            }
-
-            this.doubleBackToExitPressedOnce = true;
-            Toast.makeText(this, "Press one more time to exit UCSM", Toast.LENGTH_SHORT).show();
-
-            new Handler().postDelayed(new Runnable() {
-
-                @Override
-                public void run() {
-                    doubleBackToExitPressedOnce = false;
-                }
-            }, 2000);
         }
+
+        Intent intent=new Intent(MainActivity2.this,MainActivity.class);
+
+        startActivity(intent);
     }
 
     @Override

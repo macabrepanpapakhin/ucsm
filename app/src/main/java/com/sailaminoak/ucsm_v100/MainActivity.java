@@ -36,18 +36,10 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         spaceNavigationView = findViewById(R.id.space);
         frameLayout=findViewById(R.id.container);
-       // drawerLayout=findViewById(R.id.drawer_layout);
-       //toolbar=findViewById(R.id.toolbar);
-       // setSupportActionBar(toolbar);
-       // ActionBarDrawerToggle toogle=new ActionBarDrawerToggle(this,drawerLayout,toolbar,R.string.open_navigation,R.string.close_navigation);
-        //drawerLayout.addDrawerListener(toogle);
-        //toogle.syncState();
         spaceNavigationView.initWithSaveInstanceState(savedInstanceState);
         spaceNavigationView.addSpaceItem(new SpaceItem("Content", R.drawable.contact));
         spaceNavigationView.addSpaceItem(new SpaceItem("Tops", R.drawable.medal));
-
         fragment=new Content();
-
         getSupportFragmentManager().beginTransaction().add(R.id.container,fragment,"content").commit();
         spaceNavigationView.setSpaceOnClickListener(new SpaceOnClickListener() {
             @Override
