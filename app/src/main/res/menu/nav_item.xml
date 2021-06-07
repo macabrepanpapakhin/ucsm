@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+<item
+    android:title="Quick Write"
+    android:id="@+id/newnote"
+    android:icon="@drawable/panwithhand"
+    app:cnb_iconColor="#2186c4"
+    app:cnb_backgroundColor="@color/iconBackgroundColor"
+    />
+    <item
+        android:title="Content"
+        android:icon="@drawable/newcontent"
+        android:id="@+id/content"
+        app:cnb_iconColor="#2186c4"
+        app:cnb_backgroundColor="@color/iconBackgroundColor"
+       />
+    <item
+        android:title="ID"
+        android:icon="@drawable/id"
+        android:id="@+id/database"
+        app:cnb_iconColor="#2186c4"
+        app:cnb_backgroundColor="@color/iconBackgroundColor"
+       />
+    <item
+        android:title="Setting"
+        android:icon="@drawable/setting"
+        android:id="@+id/setting"
+        app:cnb_iconColor="#2186c4"
+        app:cnb_backgroundColor="@color/iconBackgroundColor"
+        />
+
+
+</menu>

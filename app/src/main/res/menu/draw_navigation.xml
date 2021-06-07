@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+    <group android:checkableBehavior="single">
+
+        <item android:id="@+id/nav_teacher"
+            android:title="Mentor"
+            android:icon="@drawable/teacher"
+            />
+        <item android:id="@+id/nav_student"
+            android:title="Student"
+            android:icon="@drawable/boy"
+            />
+        <item android:id="@+id/nav_share"
+            android:title="Share"
+            android:icon="@drawable/share"
+            />
+        <item android:title="Communication">
+            <menu>
+                <item android:id="@+id/nav_upload"
+                    android:title="Upload"
+                    android:icon="@drawable/upload"
+                    />
+                <item android:id="@+id/nav_pan"
+                    android:title="Pan"
+                    android:icon="@drawable/pan"
+                    />
+            </menu>
+        </item>
+
+    </group>
+</menu>
