@@ -26,6 +26,7 @@ NavigationView navigationView;
         navigationView=findViewById(R.id.nav_view);
        Toolbar toolbar=findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
         ActionBarDrawerToggle toogle=new ActionBarDrawerToggle(this,drawerLayout,toolbar,R.string.open_navigation,R.string.close_navigation);
         drawerLayout.addDrawerListener(toogle);
         toogle.syncState();
@@ -39,6 +40,7 @@ NavigationView navigationView;
         Intent intent=new Intent(MainActivity2.this,MainActivity.class);
 
         startActivity(intent);
+        finish();
     }
 
     @Override

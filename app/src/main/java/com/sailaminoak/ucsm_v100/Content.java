@@ -1,18 +1,29 @@
 package com.sailaminoak.ucsm_v100;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
+import android.view.MenuItem;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.GridView;
 import android.widget.Toast;
-import android.widget.Toolbar;
+
+import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.auth.FirebaseAuth;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -61,25 +72,93 @@ public class Content extends Fragment {
         }
     }
     GridView gridView;
-   // private DrawerLayout drawerLayout;
+    DrawerLayout drawerLayout;
+    SharedPreferences sharedPreferences;
+    Button course,knowledge;
+    NavigationView navigationView;
 
-    String[] gridviewdata={"Mentor's Contact","Student's Contacts","Schedule","number four","number five","number six","number seven","number eight"};
-    int[] images={R.drawable.teacher,R.drawable.boy,R.drawable.schdule,R.drawable.airplane,R.drawable.arrow,R.drawable.ic_delete_black_24dp,R.drawable.brain,R.drawable.ic_image_black_24dp};
+    String[] gridviewdata={"Mentor","Student","Canteen","Profile","Club","Map","Schedule","Top Graders"};
+    int[] images={R.drawable.teachercolor,R.drawable.studentcolor,R.drawable.canteencolor,R.drawable.me,R.drawable.club,R.drawable.map,R.drawable.schdule,R.drawable.topgrader};
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        Toast.makeText(getContext(), "welcome from working", Toast.LENGTH_SHORT).show();
+       // Toast.makeText(getContext(), "welcome from working", Toast.LENGTH_SHORT).show();
         View view=inflater.inflate(R.layout.fragment_content, container, false);
+        Toolbar toolbar=view.findViewById(R.id.toolbar);
+        toolbar.setNavigationIcon(R.drawable.teacher);
+        course=view.findViewById(R.id.courses);
+        knowledge=view.findViewById(R.id.knowledgeSharing);
+        knowledge.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getActivity(),KnowledgeSharing.class));
+            }
+        });
+        course.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getActivity().finish();
+                startActivity(new Intent(getActivity(),Courses.class));
+            }
+        });
+        sharedPreferences =this.getActivity().getSharedPreferences("UCSM", Context.MODE_PRIVATE);
+        //((AppCompatActivity)getActivity()).setSupportActionBar(toolbar);
+        drawerLayout=view.findViewById(R.id.drawer_layout);
+        ActionBarDrawerToggle toogle=new ActionBarDrawerToggle(getActivity(),drawerLayout,toolbar,R.string.open_navigation,R.string.close_navigation);
+       // (AppCompatActivity)(getActivity()).getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        drawerLayout.addDrawerListener(toogle);
+        toogle.syncState();
+        navigationView=view.findViewById(R.id.nav_view);
+        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch (item.getItemId()){
+                    case R.id.nav_about:DisplayToast("about page");
+                    break;
+                    case R.id.nav_setting:DisplayToast("setting page");
+
+                    break;
+                    case R.id.nav_gpa:DisplayToast("gpa page");
+
+                    break;
+                    case R.id.nav_share:DisplayToast("share software");
+
+                    break;
+                    default:DisplayToast("Under Development");break;
+                }
+                return false;
+            }
+
+        });
         gridView=view.findViewById(R.id.grid_view);
         MainAdaper mainAdaper=new MainAdaper(getContext(),gridviewdata,images);
         gridView.setAdapter(mainAdaper);
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
          @Override
          public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-             Toast.makeText(getContext(),gridviewdata[position],Toast.LENGTH_SHORT).show();
+             //Toast.makeText(getContext(),gridviewdata[position],Toast.LENGTH_SHORT).show();
              if(position==0){
-                 Intent intent=new Intent(getActivity(),MainActivity2.class);
-                 startActivity(intent); }
+                 Intent intent=new Intent(getActivity(),MentorInformation.class);
+                 startActivity(intent);
+             }
+             else if(position==1){
+                 startActivity(new Intent(getActivity(),StudentInformation.class));
+
+             }else if(position==3){
+                 Intent intent=new Intent(getActivity(),Profile.class);
+                 startActivity(intent);
+             }else if(position==2){
+                 Intent intent=new Intent(getActivity(),CanteenInformation.class);
+                 startActivity(intent);
+             }else if(position==4){
+                 Intent intent=new Intent(getActivity(),ClubInformation.class);
+                 startActivity(intent);
+             }
+             else if(position==6){
+                 getActivity().finish();
+                 startActivity(new Intent(getActivity(),ViewingSchedule.class));
+             }
              else{
                  Intent intent=new Intent(getActivity(),MainActivity2.class);
                  startActivity(intent);
@@ -90,5 +169,8 @@ public class Content extends Fragment {
 
 
         return view;
+    }
+    void DisplayToast(String msg){
+        Toast.makeText(this.getContext(),msg,Toast.LENGTH_SHORT).show();
     }
 }

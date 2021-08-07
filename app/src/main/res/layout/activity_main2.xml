@@ -28,7 +28,23 @@
             android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
             app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
             android:elevation="4dp"
-            />
+            >
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <com.pkmmte.view.CircularImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    app:border="true"
+                    app:border_color="#EEEEEE"
+                    app:border_width="4dp"
+                    app:shadow="true"
+                    android:src="@drawable/ucsmquitesmall">
+
+                </com.pkmmte.view.CircularImageView>
+            </RelativeLayout>
+        </androidx.appcompat.widget.Toolbar>
 
     </RelativeLayout>
 

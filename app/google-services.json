@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "622601578050",
+    "firebase_url": "https://ucsm-v1-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "ucsm-v1",
+    "storage_bucket": "ucsm-v1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:622601578050:android:7d473e5595de5b4c5a6fdb",
+        "android_client_info": {
+          "package_name": "com.sailaminoak.ucsm_v100"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "622601578050-eoeaf3qljaac1efhmrukm0k3ebjr7r0t.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.sailaminoak.ucsm_v100",
+            "certificate_hash": "306f052f4ded0f513a206431a778a6bda12f941e"
+          }
+        },
+        {
+          "client_id": "622601578050-i1gih1dk3ruf1qfk162nfpuffvedjomn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBAppWF3Qp6Z-8qGvUhMo9wfPmHNHZGPjc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "622601578050-i1gih1dk3ruf1qfk162nfpuffvedjomn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

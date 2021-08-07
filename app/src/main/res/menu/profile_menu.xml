@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+    <group android:checkableBehavior="single">
+
+        <item android:id="@+id/nav_verifyemail"
+            android:title="Verify Email"
+            android:icon="@drawable/verify"
+            />
+        <item android:id="@+id/nav_changepassword"
+            android:title="Change Password"
+            android:icon="@drawable/resetpassword"
+            />
+        <item android:id="@+id/nav_changeemail"
+            android:title="Chang Profile Picture"
+            android:icon="@drawable/boy"
+            />
+        <item android:title="Communication">
+            <menu>
+                <item android:id="@+id/nav_messages"
+                    android:title="Direct Message"
+                    android:icon="@drawable/messages"
+                    />
+                <item android:id="@+id/nav_homeworktodo"
+                    android:title="Homework Reminder"
+                    android:icon="@drawable/homeworktodo"
+                    />
+            </menu>
+        </item>
+
+    </group>
+</menu>

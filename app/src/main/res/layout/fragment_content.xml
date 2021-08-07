@@ -1,85 +1,123 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:id="@+id/drawer_layout"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".Content"
-    android:background="#ffffff"
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent">
+    <androidx.drawerlayout.widget.DrawerLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/drawer_layout"
+        tools:openDrawer="start">
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-    android:tag="content"
-  >
 
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:id="@+id/toolbar"
+        android:background="@color/colorAccent"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        android:elevation="40dp"
+        >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+            <com.pkmmte.view.CircularImageView
+                android:layout_width="100dp"
 
+                android:layout_height="100dp"
+                android:layout_alignParentRight="true"
+                app:border="true"
+                app:border_color="#EEEEEE"
+                android:id="@+id/imageOFucsm"
+                app:shadow="true"
+                android:background="@color/tran"
+                android:src="@drawable/ucsmquitesmall">
 
-
-
-        <LinearLayout
+            </com.pkmmte.view.CircularImageView>
+        </RelativeLayout>
+    </androidx.appcompat.widget.Toolbar>
+    <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
+
             >
 
-            <Button
-                android:padding="15dp"
-                android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:layout_above="@+id/container"
-                android:drawableLeft="@drawable/ucsmquitesmall"
-                android:background="@color/white"
-                android:id="@+id/name"
 
-                android:text="University of Computer Studies,  \n Mandalay(COE)"
-                />
 
-            <GridView
-               android:padding="30dp"
-
-                android:background="@drawable/background_color"
-                android:paddingTop="30dp"
-                android:id="@+id/grid_view"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:numColumns="4"
-                />
             <ScrollView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                >
+
+
            <LinearLayout
                android:layout_width="match_parent"
                android:layout_height="wrap_content"
                android:orientation="vertical">
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:text="University of Computer Studies, Mandalay"
-                android:textSize="25sp"/>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:text="University of Computer Studies, Mandalay"
-                android:textSize="25sp"/>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:text="University of Computer Studies, Mandalay"
-                android:textSize="25sp"/>
-            <TextView
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:text="University of Computer Studies, Mandalay"
-            android:textSize="25sp"/>
+
+                <GridView
+                    android:padding="10dp"
+                    android:layout_marginTop="?actionBarSize"
+                    android:paddingTop="?actionBarSize"
+                    android:id="@+id/grid_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="250dp"
+                    android:layout_gravity="center"
+                    android:numColumns="4"
+
+                    />
+
+
+               <Button
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:background="@drawable/beautify_button"
+                   android:drawableLeft="@drawable/knowledgeshareing"
+                   android:text="Knowledge Sharing"
+                   android:id="@+id/knowledgeSharing"
+                   android:layout_margin="10dp"
+                   android:padding="10dp"
+                   />
+
+               <Button
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:layout_margin="10dp"
+                   android:background="@drawable/beautify_button"
+                   android:drawableLeft="@drawable/laptop"
+                   android:padding="10dp"
+                   android:id="@+id/courses"
+                   android:text="Courses"
+                   />
+
+
+
            </LinearLayout>
             </ScrollView>
 
 
-        </LinearLayout>
+    </RelativeLayout>
 
 
 
+        </FrameLayout>
+        <com.google.android.material.navigation.NavigationView
+            android:id="@+id/nav_view"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            android:fitsSystemWindows="true"
+            app:menu="@menu/draw_navigation"
+            app:headerLayout="@layout/nav_header"/>
+    </androidx.drawerlayout.widget.DrawerLayout>
 
-    </FrameLayout>
-
+</FrameLayout>

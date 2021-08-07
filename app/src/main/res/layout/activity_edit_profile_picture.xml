@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".EditProfilePicture">
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:id="@+id/toolbar"
+        >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="?actionBarSize">
+
+            <ImageButton
+                android:id="@+id/backImageButton"
+                android:layout_width="60dp"
+                android:layout_height="match_parent"
+                android:background="@color/tran"
+                android:src="@drawable/backarrow" />
+        </RelativeLayout>
+    </androidx.appcompat.widget.Toolbar>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/rel">
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:layout_marginTop="?actionBarSize"
+        app:strokeWidth="1dp"
+        android:layout_centerInParent="true"
+        app:shapeAppearanceOverlay="@style/roundedImageViewRounded"
+        app:strokeColor="@color/black"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/unknown"
+        android:id="@+id/profilePicture"
+        />
+    </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/cardViewOfData"
+            android:layout_below="@+id/rel"
+            android:orientation="vertical">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputName"
+                style="@style/parent"
+                android:layout_margin="@dimen/loginViewsMargin"
+                >
+                <EditText
+                    android:backgroundTint="@color/black"
+                    android:id="@+id/editTextName"
+                    style="@style/modifiedEditText"
+                    android:focusable="true"
+                    android:hint="Name"
+                    android:padding="10dp"
+                    android:inputType="textPersonName"
+                    android:maxLines="1"
+                    />
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputEmail"
+                style="@style/parent"
+                android:layout_margin="@dimen/loginViewsMargin"
+                >
+                <EditText
+                    android:backgroundTint="@color/black"
+                    android:id="@+id/editTextEmail"
+                    style="@style/modifiedEditText"
+                    android:focusable="true"
+                    android:hint="Email"
+                    android:padding="10dp"
+                    android:inputType="textEmailAddress"
+                    android:maxLines="1"
+                    />
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputAbout"
+                style="@style/parent"
+                android:layout_margin="@dimen/loginViewsMargin"
+                >
+                <EditText
+                    android:backgroundTint="@color/black"
+                    android:hint="About"
+                    android:id="@+id/editTextAbout"
+                    style="@style/modifiedEditText"
+                    android:focusable="true"
+                    android:maxLines="100"
+                    android:padding="10dp"
+                    />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+        </LinearLayout>
+
+
+    <br.com.simplepass.loading_button_lib.customViews.CircularProgressButton
+        android:id="@+id/saveButton"
+        style="@style/loginButton"
+        android:layout_marginTop="@dimen/loginViewsMargin"
+        android:text="Save"
+        app:initialCornerAngle="27dp"
+        app:spinning_bar_color="#FFF"
+        app:spinning_bar_padding="6dp"
+        app:spinning_bar_width="4dp"
+        android:layout_below="@+id/cardViewOfData"
+        android:layout_centerInParent="true"/>
+
+    <TextView
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_marginTop="30dp"
+        android:paddingLeft="20dp"
+        android:text="Send Email Verification"
+        android:textColor="@color/purple_700"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:id="@+id/sendEmailVerificationButton"
+        android:layout_below="@+id/saveButton"
+        />
+    <TextView
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_marginTop="33dp"
+        android:paddingLeft="20dp"
+        android:text="Your Email  Address"
+        android:textColor="@color/purple_700"
+        android:textSize="12sp"
+        android:layout_below="@+id/saveButton"
+        android:layout_toRightOf="@+id/sendEmailVerificationButton"
+        android:id="@+id/emailForVerification"
+
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:paddingLeft="20dp"
+        android:text="Send Reset Password"
+        android:textColor="@color/purple_700"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:id="@+id/sendPasswordButton"
+        android:layout_below="@+id/sendEmailVerificationButton"
+        />
+    <TextView
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_marginTop="33dp"
+        android:paddingLeft="20dp"
+        android:text="Your Email  Address"
+        android:textColor="@color/purple_700"
+        android:textSize="12sp"
+        android:layout_toRightOf="@+id/sendPasswordButton"
+        android:id="@+id/emailForResetPassword"
+        android:layout_below="@+id/sendEmailVerificationButton"
+        />
+
+
+
+</RelativeLayout>

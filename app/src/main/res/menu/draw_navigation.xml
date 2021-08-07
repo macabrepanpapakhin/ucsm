@@ -4,17 +4,21 @@
     tools:showIn="navigation_view">
     <group android:checkableBehavior="single">
 
-        <item android:id="@+id/nav_teacher"
-            android:title="Mentor"
-            android:icon="@drawable/teacher"
+        <item android:id="@+id/nav_setting"
+            android:title="Setting"
+            android:icon="@drawable/setting"
             />
-        <item android:id="@+id/nav_student"
-            android:title="Student"
+        <item android:id="@+id/nav_gpa"
+            android:title="GPA"
             android:icon="@drawable/boy"
             />
         <item android:id="@+id/nav_share"
-            android:title="Share"
+            android:title="Share Application"
             android:icon="@drawable/share"
+            />
+        <item android:id="@+id/nav_about"
+            android:title="About Software"
+            android:icon="@drawable/about"
             />
         <item android:title="Communication">
             <menu>

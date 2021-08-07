@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ViewingSchedule">
+    <GridView
+        android:id="@+id/grid_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:numColumns="6"
+        android:layout_below="@+id/todayScheduleTextView"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        />
+    <TextView
+        android:layout_marginLeft="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/grid_view"
+        android:id="@+id/selfStudyReminder"
+        android:textSize="20sp"
+        android:text="Be Productive Today."
+        android:textStyle="bold"
+        android:layout_marginTop="10dp"
+        />
+    <TextView
+        android:layout_margin="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/selfStudyReminder"
+        android:id="@+id/chooseOtherClass"
+        android:textSize="16sp"
+        android:text="Choose Other Class?"
+        android:textColor="@color/colorAccent"
+        android:soundEffectsEnabled="true"
+        />
+    <TextView
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:id="@+id/todayScheduleTextView"
+        android:text="Today's Schedule"
+        android:textStyle="bold"
+        android:layout_below="@+id/cardViewOfData"
+        android:layout_marginBottom="15dp"
+        />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardViewOfData"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginBottom="20dp"
+        app:cardCornerRadius="10dp"
+        android:background="@drawable/beautify_button"
+        android:elevation="10dp">
+
+        <CalendarView
+            android:id="@+id/calenderView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </androidx.cardview.widget.CardView>
+
+
+
+</RelativeLayout>
